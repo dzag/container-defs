@@ -1,0 +1,60 @@
+workspace(name = "ubuntu2004_bazel_docker")
+
+load(
+    "@bazel_tools//tools/build_defs/repo:http.bzl",
+    "http_archive",
+)
+load(":revisions.bzl", "RULES_DOCKER", "LAYER_DEFINITIONS")
+
+http_archive(
+    name = "io_bazel_rules_docker",
+    sha256 = RULES_DOCKER.sha256,
+    strip_prefix = "rules_docker-" + RULES_DOCKER.version,
+    urls = ["https://github.com/bazelbuild/rules_docker/releases/download/" + RULES_DOCKER.version + "rules_docker-v" + RULES_DOCKER.version + ".tar.gz"],
+)
+
+http_archive(
+    name = "layer_defs",
+    # sha256 = LAYER_DEFINITIONS.sha256,
+    strip_prefix = "layer-defs-" + LAYER_DEFINITIONS.commit,
+    urls = ["https://github.com/dzag/layer-defs/archive/" + LAYER_DEFINITIONS.commit + ".tar.gz"],
+)
+
+load(
+    "@io_bazel_rules_docker//repositories:repositories.bzl",
+    container_repositories = "repositories",
+)
+
+container_repositories()
+
+load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
+
+container_deps()
+
+load("@io_bazel_rules_docker//repositories:pip_repositories.bzl", "pip_deps")
+
+pip_deps()
+
+load("@layer_defs//layers/ubuntu2004/base:deps.bzl", ubuntu_deps = "deps")
+
+ubuntu_deps()
+
+load("@layer_defs//layers/ubuntu2004/java:deps.bzl", java_deps = "deps")
+
+java_deps()
+
+load("@layer_defs//layers/ubuntu2004/bazel:deps.bzl", bazel_deps = "deps")
+
+bazel_deps()
+
+load("@layer_defs//layers/ubuntu2004/python:deps.bzl", python_deps = "deps")
+
+python_deps()
+
+load("@layer_defs//layers/ubuntu2004/clang:deps.bzl", clang_deps = "deps")
+
+clang_deps()
+
+load("@layer_defs//layers/ubuntu2004/docker:deps.bzl", docker_deps = "deps")
+
+docker_deps()

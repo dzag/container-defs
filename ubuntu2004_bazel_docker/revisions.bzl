@@ -1,0 +1,9 @@
+RULES_DOCKER = struct(
+  version = "0.14.4",
+  sha256 = "4521794f0fba2e20f3bf15846ab5e01d5332e587e9ce81629c7f96c793bb7036",
+)
+
+LAYER_DEFINITIONS = struct(
+    commit = "a50be21e3c6cf2c44a1c6e88ab64c98e56bc1398",
+    sha256 = "a4b00859c47757e449e45794c28db238236ef5f16d1a107b08848c0df032f6f7",
+)
