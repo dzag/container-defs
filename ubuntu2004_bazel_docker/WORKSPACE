@@ -16,8 +16,8 @@ http_archive(
 http_archive(
     name = "layer_defs",
     sha256 = LAYER_DEFINITIONS.sha256,
-    strip_prefix = "layer-defs-" + LAYER_DEFINITIONS.commit,
-    urls = ["https://github.com/dzag/layer-defs/archive/" + LAYER_DEFINITIONS.commit + ".tar.gz"],
+    strip_prefix = "layer-defs-" + LAYER_DEFINITIONS.version,
+    urls = ["https://github.com/dzag/layer-defs/archive/" + LAYER_DEFINITIONS.version + ".tar.gz"],
 )
 
 load(
