@@ -31,10 +31,6 @@ load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 
 container_deps()
 
-load("@io_bazel_rules_docker//repositories:pip_repositories.bzl", "pip_deps")
-
-pip_deps()
-
 load("@layer_defs//layers/ubuntu2004/base:deps.bzl", ubuntu_deps = "deps")
 
 ubuntu_deps()

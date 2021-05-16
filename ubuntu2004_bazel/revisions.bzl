@@ -1,9 +1,9 @@
 RULES_DOCKER = struct(
-  version = "0.14.4",
-  sha256 = "4521794f0fba2e20f3bf15846ab5e01d5332e587e9ce81629c7f96c793bb7036",
+  version = "0.17.0",
+  sha256 = "59d5b42ac315e7eadffa944e86e90c2990110a1c8075f1cd145f487e999d22b3",
 )
 
 LAYER_DEFINITIONS = struct(
-    version = "0.3.0",
-    sha256 = "a45aa1463825d2fbc6858ceb4bd4e6c14133781c62be0f300b0afed0de6b81be",
+    version = "0.4.0",
+    sha256 = "8e64634cb6690efefb8a8e1d8fe58aa76f14345e4f3f23b89a6cb423393a52de",
 )
