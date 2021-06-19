@@ -38,6 +38,6 @@ container_push(
     registry = "index.docker.io",
     repository = "dzag/bazel-docker",
     tags = [
-        "2004.3.0"
+        "2004.4.0"
     ]
 )
