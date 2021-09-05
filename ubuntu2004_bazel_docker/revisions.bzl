@@ -4,6 +4,6 @@ RULES_DOCKER = struct(
 )
 
 LAYER_DEFINITIONS = struct(
-    version = "0.4.1",
-    sha256 = "258fdcbf21f7ad2be14c0302d03a27fb80ecb762ac70a19af8d967dd4dd6faa4",
+    version = "0.5.1",
+    sha256 = "43a1e16fd518c53c5b36d60e2c3ca593d681c5871d86790c333123102ca77ff0",
 )
